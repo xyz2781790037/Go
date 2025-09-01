@@ -11,7 +11,7 @@ func Sub(a, b int) (int,int,int){
 	c := 10
 	return c - (a - b),c,b;
 }
-func main(){
+func x4(){
 	ma()
 	a := 2
 	b := 3
