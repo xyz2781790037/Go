@@ -12,8 +12,9 @@ func intSeq() func() int{
 // 我们调用 intSeq 函数，将返回值（一个函数）赋给 nextInt。 这个函数的值包含了自己的值 i，这样在每次调用 nextInt 时，都会更新 i 的值。
 func Bb(){
 	nextInt := intSeq()
-	fmt.Println(nextInt())
-    fmt.Println(nextInt())
+	// 因为 Go 的闭包特性，这个 i 会一直保留在返回的函数中，不会随着 intSeq 执行完就销毁。
+	fmt.Println(nextInt()) // i = 1
+    fmt.Println(nextInt()) // i = 2
     fmt.Println(nextInt())
 	newInts := intSeq()
     fmt.Println(newInts())
